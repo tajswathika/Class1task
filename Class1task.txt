@@ -1,0 +1,374 @@
+1.a.Difference between Statically typed and Dynamically typed languages
+
+Statically typed languages
+A language is statically typed if the type of a variable is known at compile time. For some languages this means that you as the programmer must specify what type each variable is; other languages (e.g.: Java, C, C++) offer some form of type inference, the capability of the type system to deduce the type of a variable (e.g.: OCaml, Haskell, Scala, Kotlin).
+
+The main advantage here is that all kinds of checking can be done by the compiler, and therefore a lot of trivial bugs are caught at a very early stage.
+
+Examples: C, C++, Java, Rust, Go, Scala
+
+Dynamically typed languages
+A language is dynamically typed if the type is associated with run-time values, and not named variables/fields/etc. This means that you as a programmer can write a little quicker because you do not have to specify types every time (unless using a statically-typed language with type inference).
+
+Examples: Perl, Ruby, Python, PHP, JavaScript, Erlang
+
+Most scripting languages have this feature as there is no compiler to do static type-checking anyway, but you may find yourself searching for a bug that is due to the interpreter misinterpreting the type of a variable. Luckily, scripts tend to be small so bugs have not so many places to hide.
+
+1.b.Difference between Scripting and Programming languages
+
+Scripting Language:
+
+in the normal case, you have to compile a C program before you can run it. But in the normal case, you don't have to compile a JavaScript program before you run it. So JavaScript is sometimes called a "scripting" language.
+Some examples of "scripting" languages
+Lua
+JavaScript
+VBScript and VBA
+Perl
+A scripting language is used to write code that is going to target a software system. It's going to automate operations on that software system. The script is going to be a sequence of instructions to the target software system.
+In the other hand, the target software system of an script may compile the code or interpret it. Is up to the software system.
+
+Programming language:
+
+A programming language is a computer language that is used by programmers (developers) to communicate with computers. It is a set of instructions written in any specific language ( C, C++, Java, Python) to perform a specific task.
+Python is the most commonly used programming language.
+A programming language targets the computing system, which can be a real or virtual machine. The instructions are executed by the machine.
+
+Of course, a real machine understands only binary code so you need to compile the code of a programming language. But this is a consequence of targeting a machine instead of a program.
+
+
+2.codekata practice
+
+1.Write a code to get the input in the given format and print the output in the given format(I/O)
+
+inp.on("close", () => {
+let N=userInput[0];
+N = parseInt(N);
+if(Number.isInteger(N))
+console.log(N);
+
+2.Write a code to get the input in the given format and print the output in the given format(I/O)
+
+var arr =userInput[0].split(" ");
+        if(arr.length == 7)
+    console.log(userInput[0]);
+    else
+    console.log("invalid format");
+console.log();
+
+3.You are given with a number "N", find its cube.(AB)
+
+let a = userInput[0];
+function FindingCube(c)   
+{
+    Cube = c*c*c;
+    console.log(Cube);
+}
+FindingCube(a);  
+});
+
+4.You are provided with the radius of a circle "A". Find the length of its circumference.(AB)
+
+if(userInput[0]<0)
+    console.log("Error");
+else
+{
+   var Circumference = 2*22/7*userInput[0];
+   console.log(Circumference.toFixed(2));
+}
+
+5.You are given three numbers A, B & C. Print the largest amongst these three numbers.(AB)
+
+let a = userInput[0], b = userInput[1], c = userInput[2];
+function GreatestofThreeNumbers(n1,n2,n3)   
+{
+    
+    if(n1>n2)
+    {
+        if(n1>n3)
+        console.log(n1);
+        else
+        console.log(n3);
+    }
+    else if(n2>n3)
+        console.log(n2);
+    else
+        console.log(n3);
+}        
+GreatestofThreeNumbers(a,b,c);
+
+6.You are given with a number A i.e. the temperature in Celcius. Write a program to convert this into Fahrenheit. (AB)
+
+let A = parseFloat(userInput[0]);
+    
+        let Fahrenheit = (A*9/5) + 32;
+        console.log(Fahrenheit.toFixed(2));
+
+7.Print the First 3 multiples of the given number "N". (N is a positive integer)(AB)
+
+let N = userInput[0];
+    let Multiples = (N*1 +" "+ N*2 +" "+ N*3);
+    console.log(Multiples);
+
+8.You are given A = Length of a rectangle & B = breadth of a rectangle. Find its area “C”.(AB)
+
+console.log(Area = userInput[0] * userInput[1]);
+
+9.You will be provided with a number. Print the number of days in the month corresponding to that number.(AB)
+
+let monthinput = userInput[0];
+    let months = {1 : "31 Days", 2 : "28 Days", 3 : "31 Days", 4 : "30 Days", 5 : "31 Days", 6 : "30 Days", 7 : "31 Days", 8 : "31 Days", 9 : "30 Days", 10 : "31 Days", 11 : "30 Days", 12 : "31 Days"};
+    if (monthinput>0 && monthinput<=12)
+    console.log(months[monthinput]);
+    else
+    console.log("Error");
+
+10.You are provided with two numbers. Find and print the smaller number.(AB)
+
+let arr = userInput[0].split(" ");
+var a = +arr[0];
+var b = +arr[1];
+
+if(a<b)
+
+    console.log(a);
+    else
+    console.log(b);
+
+11.You are provided with a number check whether its odd or even. (AB)
+
+let num = parseFloat(userInput[0]);
+//console.log(num);
+//console.log(Number.isInteger(num));
+if(Number.isInteger(num))
+{
+    if(num == 0 )
+        console.log("Zer0");
+    else if(num%2 == 0 )
+        console.log("Even");
+    else
+        console.log("Odd");
+        
+}
+else
+{
+       var roundof = num.toFixed(2);
+        console.log(roundof);
+        
+    
+}
+
+
+12.You are given Two Numbers, A and B. If C = A + B. Find C.(AB)
+
+let num1 = parseFloat(userInput[0]);
+let num2 = parseFloat(userInput[1]);
+
+function sum(n1,n2)
+{
+     return (n1+n2).toFixed(1);
+}
+var s=sum(num1,num2);
+console.log(s);
+
+13.You are given with Principle amount($), Interest Rate(%) and Time (years) in that order. Find Simple Interest.(AB)
+
+let Input = userInput[0].split(" ")
+for(var i=0;i<3;i++)
+{
+    Input[i] = parseFloat(Input[i]);
+}
+let SI;
+let P=Input[0];
+let N=Input[1];
+let R=Input[2];
+let FinSI;
+SI = parseFloat(P*N*R/100);
+SI = SI.toFixed(2);
+console.log(SI);
+
+14.A person saves his monthly saving according to given schema. He saves same amount of money which is equal to the money saved in immediate previous two months. Assume, initially he saved 1000 rupees and in first month he saved another 1000. Your task is to tell how much he had totally saved at the end of ‘n’ months(arr)
+
+var n = userInput[0];
+var previous=[];
+previous[0] = 1000;
+previous[1] = 1000;
+var total = 2000;//userInput[1]
+for(var i =2; i<=n; i++)
+{
+    previous[i] = +(previous[i-1]) + (+previous[i-2]);
+    total = total + (+previous[i]);
+}
+console.log(total);
+
+15.You are a passport issuer, but due to some problems in the system, there are redundant  passport numbers. Your task is to delete all the duplicate passport numbers. You are given a list of passport numbers.(arr)
+
+let Passport = userInput[0];
+    let Pptdetails = userInput[1].split(" ");
+    var CorrectPptdetails ="";
+    for(var i=0; i<Passport; i++)
+    {
+        if(i==0)
+        CorrectPptdetails = Pptdetails[i];
+        if(CorrectPptdetails.search(Pptdetails[i])<0)
+        CorrectPptdetails = CorrectPptdetails +" "+ Pptdetails[i];
+    }
+
+16.You are given a number with duplicate digits your task is to remove the immediate duplicate digits and print the result(arr)
+
+let Gvnnumber = userInput[0];
+    let arrInfo=[];
+    
+    for(var a=0;a<Gvnnumber.length;a++)
+    {
+        arrInfo[a]=Gvnnumber.substring(a,a+1);
+    }
+    
+    var CorrectDigits = "";
+   
+    for(var i=0; i<arrInfo.length; i++)
+    {
+    
+        if(arrInfo[i] != arrInfo[i+1])
+        {
+             CorrectDigits = CorrectDigits + arrInfo[i];
+        
+        }
+        else
+        i=i+1
+    }
+    if(CorrectDigits.length == 0)
+    console.log("-1");
+    else
+    console.log(CorrectDigits);
+
+17.Find the minimum among 10 numbers.(B)
+
+let arrInput = userInput[0].split(" ");
+var NumInput=[];
+var minValue="";
+for(var i=0; i<10; i++)
+{
+    NumInput[i] = parseInt(arrInput[i]);
+}
+for(var j=0; j<10; j++)
+{
+    var count =0, count1 = 0;
+    for(var k=0; k<10; k++)
+    {
+        if(NumInput[j]<=NumInput[k])
+        count = count + 1;
+    }
+    if(count == 10 || count1 == 10)
+        minValue=NumInput[j];
+}
+console.log(minValue);
+
+18.Write a code to get the input and print it 5 times.(B)
+
+let Input = userInput[0];
+for(var i=0; i<5; i++)
+{
+    console.log(Input);
+}
+
+19.Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.(B)
+
+let Input = userInput[0].split(" ");
+let Elements = userInput[1].split(" ");
+let CheckV = Input[1];
+let count = 0;
+for(var i=0; i<Input[0]; i++)
+{
+if(CheckV == Elements[i])
+count = count + 1;
+}
+if(count >= 1)
+console.log("yes");
+else
+console.log("no");
+});
+
+20.Given 2 numbers N,M. Print 'yes' if their product is a perfect square else print 'no'.(B)
+
+ var arrInput = userInput[0].split(" ");
+    arrInput[0] = +arrInput[0];
+    arrInput[1] = +arrInput[1];
+    var Squarevalue;
+    var a;
+    Squarevalue = arrInput[0]*arrInput[1];
+    a=Math.sqrt(Squarevalue);
+    if(Number.isInteger(a))
+    console.log("yes");
+    else
+    console.log("no");
+    
+21.Write a code to get an integer N and print values from 1 till N in a separate line.(B)
+
+let Input = parseInt(userInput[0]);
+for(var i=1; i<=Input; i++)
+{
+    console.log(i);
+}
+
+22.Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.(B)
+
+let Input = parseInt(userInput[0]);
+let Numbers = userInput[1].split(" ");
+for(var i=0; i<2; i++)
+{
+Numbers[i] = parseInt(Numbers[i]);
+}
+if(Input > Numbers[0])
+{
+    if(Input<Numbers[1])
+    console.log("yes");
+    else
+    console.log("no")
+}
+else
+console.log("no");
+
+
+});
+
+23.Given 2 numbers N and K followed by N elements,print the number of repetition of K otherwise print '-1' if the element not found.(B)
+
+let Input1 = userInput[0].split(" ");
+var count = 0;
+for(var i=0; i<2; i++)
+{
+    Input1[i] = parseInt(Input1[i]);
+}
+let Input2 = userInput[1].split(" ");
+for(var j=0; j<Input1[0]; j++)
+{
+    Input2[j] = parseInt(Input2[j]);
+}
+for(var k=0; k<Input1[0]; k++)
+{
+    if(Input1[1]==Input2[k])
+    count = count+1;
+}
+if(count>=1)
+console.log(count-1);
+else
+console.log("-1");
+});
+
+3.Difference between HTTP1.1 vs HTTP2
+
+Http1.1:
+
+Comparatively 1.1 is slower.
+loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it.
+Status codes were used to indicate successful requests and to indicate transmission errors.
+Text based protocol that is in the readable form
+SSL is not required but recommended. Digest authentication used in HTTP1.1 is an improvement over HTTP1.0. HTTPS uses SSL/TLS for secure encrypted communication.
+
+Http2:
+
+version 2 is much faster.
+is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource.
+Underlying semantics of HTTP such as headers, status codes remains the same.
+It is a binary protocol i.e. only binary commands in the form of 0s and 1s are transmitted over the wire. The binary framing layer divides the message into frames that are segregated based on their type – Data or Header. This feature greatly increases efficiency in terms of security, compression and multiplexing.
+Though security is still not mandatory, it is mostly encrypted (though it is not enforced) since almost all clients require traffic to be encrypted. It also has some minimum standards, such as minimum key size for encryption. TLS 1.2 etc.
